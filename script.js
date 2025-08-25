@@ -24,6 +24,9 @@ const goBackToMain = () => {
   pseudoInput.value = "";
   submitBtn.disabled = true;
   descriptionIndex = 0;
+  document.querySelectorAll("img").forEach((img) => {
+    img.addEventListener("click", handleSelect);
+  });
 };
 
 const updateValidity = () => {
