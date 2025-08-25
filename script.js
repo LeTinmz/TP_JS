@@ -9,11 +9,23 @@ const image2 = document.getElementById("img-2");
 const image3 = document.getElementById("img-3");
 const images = document.getElementById("avatar-section");
 
+const mainPageHTML = document.querySelector("main").innerHTML;
+
 let selectedImage = null;
 let isValid = false;
 pseudoInput.value = "";
 submitBtn.disabled = true;
 let descriptionIndex = 0;
+
+const goBackToMain = () => {
+  document.querySelector("main").innerHTML = mainPageHTML;
+  selectedImage = null;
+  isValid = false;
+  pseudoInput.value = "";
+  submitBtn.disabled = true;
+  descriptionIndex = 0;
+};
+
 const updateValidity = () => {
   isValid = pseudoInput.value !== "" && selectedImage !== null;
   submitBtn.disabled = !isValid;
@@ -33,7 +45,12 @@ const handleGoNext = () => {
     <img src="${selectedImage.src}"> 
     <p>${pseudoInput.value}</p>
     <p>${descriptions[descriptionIndex]}</p> 
-    </div>`;
+    </div>
+
+    <button id="back-btn">retour</button>`;
+
+  const backBtn = document.getElementById("back-btn");
+  backBtn.addEventListener("click", goBackToMain);
 };
 
 descriptionArea.innerText = descriptions[descriptionIndex];
