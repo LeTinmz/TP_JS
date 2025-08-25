@@ -1,0 +1,58 @@
+* {
+
+box-sizing: border-box;
+}
+
+main {
+
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+min-width : 100vh;
+}
+
+.light {
+background : white;
+color : black;
+}
+
+.dark{
+background : black;
+color : white
+}
+
+#theme-btn {
+background : red
+}
+
+.selected {
+border : 2px solid black;
+transform: scale(110%);
+}
+
+img {max-height : 100px;
+        aspect-ratio: 1/1;}
+
+.card {
+    border : 1px solid black;
+    border-radius: 10px;
+    padding : 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+#avatar-section {
+display: flex;
+gap : 1rem;
+padding : 1rem;
+}
+
+#theme-btn {
+    position : absolute;
+    bottom: 0;
+    right: 0;
+}
